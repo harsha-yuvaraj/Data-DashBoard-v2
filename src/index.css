@@ -20,5 +20,42 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url('https://wallpapers.com/images/hd/map-background-527ddbha5r4am9rc.jpg');
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover;
 }
 
+.stat-area{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.stat-item{
+  background-color: #42afde;
+  opacity: 0.7;
+  margin-left: 10px;
+  padding: 2px 5px;
+  border-radius: 15px;
+}
+
+.stat-item h3{
+  color: rgb(229, 13, 13);
+  font-weight: bold;
+}
+
+.stat-item h4{
+  color: rgb(0, 0, 0);
+}
+
+.header h1{
+  color: rgb(60, 54, 54);
+}
+
+.header{
+  position: absolute;
+  top: 0%;
+  left: 22.5%;
+}
