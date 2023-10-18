@@ -1,37 +1,37 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  background-image: url('https://wallpapers.com/images/hd/map-background-527ddbha5r4am9rc.jpg');
+  background-position:center; 
+  background-size:cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background-image: url('https://wallpapers.com/images/hd/map-background-527ddbha5r4am9rc.jpg');
-  background-position: center; 
-  background-repeat: no-repeat; 
-  background-size: cover;
 }
-
-.stat-area{
+.app{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.container{
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
+
+.main-panel{
+ top: 0;
+ padding-left: 250px;
+}
+
+.result-area{
+ 
+  justify-content: center;
+  align-items: center;
+}
+
 
 .stat-item{
   background-color: #42afde;
@@ -54,8 +54,34 @@ body {
   color: rgb(60, 54, 54);
 }
 
-.header{
-  position: absolute;
-  top: 0%;
-  left: 22.5%;
+.result-area table{
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-align: center;
+  color: white;
+  width: 85% ;
+}
+
+
+.result-area td{
+  height: 30px;
+  vertical-align: middle;
+}
+.result-area thead {
+  background-color: #091115;
+  height: 50px;
+}
+
+.result-area th{
+  border-spacing:100px;
+}
+
+.result-area tr:nth-child(even) {
+  background-color: #70706b;
+  opacity: 0.8;
+}
+   
+.result-area tr:nth-child(odd) {
+  background-color: #383837;
+  opacity: 0.8;
 }
