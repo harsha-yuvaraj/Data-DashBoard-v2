@@ -8,19 +8,20 @@ function App() {
   const [avgGDP, setAvgGDP] = useState(0);
   const [highPopCountry, setPopCountry] = useState({'name': '', 'value':0});
   const [lowUnempRate, setUnempRate] = useState({'name': '', 'value':0});
+
+  const apiCall = async (query) => { 
+    const response = await fetch("https://api.api-ninjas.com/v1/country?limit=30"+query, {headers: {"X-Api-Key" : API_KEY}});
+    const data = await response.json();
+    setCountryList(data);
+  }
+
   
   useEffect(() => {
-    const apiCall = async () => { 
-       const response = await fetch("https://api.api-ninjas.com/v1/country?limit=30", {headers: {"X-Api-Key" : API_KEY}});
-       const data = await response.json();
-       setCountryList(data);
-       console.log("len:"+countryList.length);
-    }
-
-    apiCall();
+    apiCall("");
   }, [])
 
   useEffect(()=>{
+     console.log("len:"+countryList.length);
      calcAvgGDP();
      calcHighestPopulationDensity();
      calcUnempRate();
@@ -60,6 +61,14 @@ function App() {
     setUnempRate({'name':name, 'value':lEmvalue});
   }
 
+  function getSearchQuery(){
+     var country_name = (document.getElementById('country_name').value).toLowerCase();
+     var unemployment_rate = document.getElementById('eRateOutput').value;
+
+     apiCall(`&name=${country_name}&max_unemployment=${unemployment_rate}`);
+     
+  }
+
   return (
     <>
     <div className='app'>
@@ -68,17 +77,17 @@ function App() {
             <div className='container'>
                 <div className='stat-item'>
                     <h3>Average GDP 💰 </h3>
-                    <h4>{avgGDP}</h4> 
+                    <h4>{avgGDP} USD</h4> 
                 </div>
 
                 <div className='stat-item'>
                      <h3>Highest Population 🧑🏽‍🤝‍🧑🏽</h3> 
-                     <h4>{highPopCountry.name} : {highPopCountry.value}K</h4>
+                     <h4>{(highPopCountry.name)?(highPopCountry.name):("Unavailable")} : {highPopCountry.value}K</h4>
                 </div>
 
                 <div className='stat-item'>
                      <h3>Lowest Unemployment 🏭</h3> 
-                     <h4>{lowUnempRate.name} : {lowUnempRate.value}%</h4>
+                     <h4>{(lowUnempRate.name)?(`${lowUnempRate.name} : ${lowUnempRate.value}%`):("Unavailable")}</h4>
                 </div>
 
             </div>
@@ -86,8 +95,15 @@ function App() {
        </div>
 
        <div className='main-panel'>
-            <div className='container'>
-                   <p>Filter Tools Coming... </p>
+            <div className='filter-area'>
+               <input type="text" id="country_name" placeholder='Search any country'/> 
+               <div className='unemployment-slider'>
+                 <label>Maximum Unemployment Rate: </label>
+                 <input type="range" id="unempRateBar" name="eRateBar" min="0" max="30" step="2" onChange={(e)=>{document.getElementById('eRateOutput').innerHTML = e.target.value;} }/>
+                 <output for="eRateBar" id="eRateOutput"> 30 </output>
+               </div>
+
+               <button type='submit' id='search-button' onClick={getSearchQuery}>Search 🔍</button>
             </div>
 
             <div className='result-area'>
