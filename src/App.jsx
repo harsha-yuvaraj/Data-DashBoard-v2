@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { Link } from "react-router-dom"
 import './App.css'
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
@@ -114,31 +115,33 @@ function App() {
                      <th>Currency</th>
                      <th>Population</th>
                      <th>Unemployment Rate</th>
-                     <th>Fertility Rate</th>
+                     <th>More Details</th>
                    </tr>
                   </thead>
                   
                   <tbody>
                   { countryList && 
                     countryList.map((c) => {
-                     var gdp, curr, pop, uneRate, ferRate;
+                     var gdp, curr, pop, uneRate;
                      
                      if(c["gdp"]) {gdp = c['gdp'];}  else {gdp="Unavailable";}
                      if(c["currency"]['name']) {curr = c['currency']['name'];}  else {curr="Unavailable";}
                      if(c["population"]) {pop = c['population'] + "K";}  else {pop="Unavailable";}
                      if(c["unemployment"]) {uneRate = c['unemployment'] + "%";}  else {uneRate="Unavailable";}
-                     if(c["fertility"]) {ferRate = c['fertility'] + "%";}  else {ferRate="Unavailable";}
                   
                      return(
-                      <tr>
+                      
+                        <tr>
                          <td>{c["name"]}</td>
                          <td>{gdp}</td>
                          <td>{curr}</td>
                          <td>{pop}</td>
                          <td>{uneRate}</td>
-                         <td>{ferRate}</td>
-                      </tr>) 
-                      })
+                         <td> <Link to={`/countryDetails/${c["name"]}`} key={c["name"]}> 🔗 </Link> </td>
+                       </tr>
+                      
+                      ) 
+                    })
                   }
                   </tbody>
                 </table>
