@@ -116,3 +116,30 @@ body {
   background-color: rgb(219, 163, 43);
   font-weight: bolder;
 }
+
+nav{
+  position: fixed; 
+  top: 0; 
+  right: 10px; 
+}
+
+.home-page-link
+{
+  border:3px transparent rgb(231, 30, 4);
+  border-radius: 3px;
+  background:#1d1f1d;
+  width:75px;
+  background-color: rgb(243, 126, 9);
+  padding: 5px 5px;
+}
+
+.home-link{
+  text-decoration: none;
+  font-size: medium;
+  font-weight: bolder;
+  color: rgb(247, 248, 246);
+}
+
+.home-link:active{
+  color: rgb(134, 244, 65);
+}

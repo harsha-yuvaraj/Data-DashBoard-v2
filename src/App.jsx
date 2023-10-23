@@ -21,7 +21,6 @@ function App() {
   }, [])
 
   useEffect(()=>{
-     console.log("len:"+countryList.length);
      calcAvgGDP();
      calcHighestPopulationDensity();
      calcUnempRate();
