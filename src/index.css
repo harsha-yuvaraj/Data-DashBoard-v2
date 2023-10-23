@@ -25,6 +25,8 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+
+
   align-items: center;
   padding: 30px 5px 50px 100px;
   width: 80%;
@@ -153,4 +155,9 @@ nav{
 .details h3{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: rgb(47, 47, 47);
+}
+
+.NotFound{
+  color: red;
+  font-weight: bolder;
 }
