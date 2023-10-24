@@ -32,13 +32,12 @@ const CountryDetail = () => {
                      <h3>Carbon Dioxide Emissions 🏭:  {(info[0]["co2_emissions"])?(info[0]["co2_emissions"] + " kt"):("Unavailable 😔")}</h3>
                      <h3>Currency 🪙: {(info[0]["currency"]['name'])?(info[0]["currency"]['name'] + ` (${(info[0]["currency"]['code']) ? (info[0]["currency"]['code']) : ('Symbol Unknown')})`):("Unavailable 😔")}</h3>
                      <h3>GDP 📈:  {(info[0]["gdp"])?(info[0]["gdp"] + " USD"):("Unavailable 😔")}</h3>
+                     <h3>Population 👪:  {(info[0]["population"])?(info[0]["population"] + " K"):("Unavailable 😔")}</h3>
                      <h3>Unemployment Rate 🧑‍💼:  {(info[0]["unemployment"])?(info[0]["unemployment"] + "%"):("Unavailable 😔")}</h3>
                      <h3>Fertility Rate 🤰:  {(info[0]["fertility"])?(info[0]["fertility"] + "%"):("Unavailable 😔")}</h3>
                      <h3>Sex Ratio 🚻:  {(info[0]["sex_ratio"])?(info[0]["sex_ratio"] + "%"):("Unavailable 😔")}</h3>
                      <h3>Homicide Rate 💀:  {(info[0]["homicide_rate"])?(info[0]["homicide_rate"] + "%"):("Unavailable 😔")}</h3>
                      <h3>Internet Users 🌐:  {(info[0]["internet_users"])?(info[0]["internet_users"] + "%"):("Unavailable 😔")}</h3>
-
-
                    </>
                  )
                  

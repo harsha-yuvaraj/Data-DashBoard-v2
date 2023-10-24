@@ -36,7 +36,9 @@ body {
 
 .main-panel{
  top: 0;
- padding-left: 50px;
+ padding-left: 30px;
+ display: flex;
+ flex-direction: row;
 }
 
 .result-area{
@@ -73,7 +75,7 @@ body {
   border-spacing: 0;
   text-align: center;
   color: white;
-  width: 60% ;
+  width: 80% ;
 }
 
 
@@ -149,7 +151,8 @@ nav{
 .details h1{
   font-family: cursive;
   font-style: oblique;
-  color: #d2500e;
+  font-weight: bolder;
+  color: #050505;
 }
 
 .details h3{
@@ -160,4 +163,20 @@ nav{
 .NotFound{
   color: red;
   font-weight: bolder;
+}
+
+.chart-area {
+  height: 400px;
+  width: fit-content;
+  background-color: #cfd1d4;
+  opacity: 0.8;
+}
+
+.dash-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-bar ul{
+  list-style-type: none;
 }

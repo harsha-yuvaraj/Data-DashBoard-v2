@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link } from "react-router-dom"
+import { BarChart,Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
 import './App.css'
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
@@ -91,21 +92,22 @@ function App() {
                 </div>
 
             </div>
-            
-       </div>
 
-       <div className='main-panel'>
             <div className='filter-area'>
                <input type="text" id="country_name" placeholder='Search any country'/> 
                <div className='unemployment-slider'>
                  <label>Maximum Unemployment Rate: </label>
                  <input type="range" id="unempRateBar" name="eRateBar" min="0" max="30" step="2" onChange={(e)=>{document.getElementById('eRateOutput').innerHTML = e.target.value;} }/>
-                 <output for="eRateBar" id="eRateOutput"> 30 </output>
+                 <output htmlFor="eRateBar" id="eRateOutput"> 30 </output>
                </div>
 
                <button type='submit' id='search-button' onClick={getSearchQuery}>Search 🔍</button>
             </div>
+            
+            
+       </div>
 
+       <div className='main-panel'>
             <div className='result-area'>
             <table>
                   <thead>
@@ -131,7 +133,7 @@ function App() {
                   
                      return(
                       
-                        <tr>
+                        <tr key={c.name}>
                          <td>{c["name"]}</td>
                          <td>{gdp}</td>
                          <td>{curr}</td>
@@ -145,9 +147,36 @@ function App() {
                   }
                   </tbody>
                 </table>
+             </div>
+
+             <div className='chart-area'>
+               <BarChart 
+                  width={600}
+                  height={400} 
+                  data={countryList && countryList.map((c) => {
+                      return {name: c.name, unemployed: Math.round((c["unemployment"]) ? ((c.unemployment/ 100) * c.population) : (null)), population: c.population}
+                  })} 
+                  margin={{
+                   top: 5,
+                   right: 30,
+                   left: 20,
+                   bottom: 5
+                 }}
+               >
+                   <CartesianGrid strokeDasharray={"3 3"}/>
+                   <XAxis dataKey="name" />
+                   <YAxis />
+                   <Tooltip />
+                   <Legend />
+                  
+                   <Bar dataKey="population" fill="#1e7fd9" />
+                   <Bar dataKey="unemployed" fill="#FF5733" />
+               </BarChart>
+            </div>
+
             </div>
        </div>
-      </div>
+
        
     </>
   )
