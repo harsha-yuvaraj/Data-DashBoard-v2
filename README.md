@@ -1,45 +1,14 @@
-# Web Development Project 6 - *Geographic Dashboard 2.0*
+# *Geographic Dashboard*
 
-Submitted by: **Harshavardan Yuvaraj**
+Created by: **Harshavardan Yuvaraj**
 
-This web app: **This dashboard presents and allows users to filter data related to geographics. All countries' data is fetched from Ninja's Country API (https://api-ninjas.com/api/country). In addition, this web app allows users to visualize the population vs. unemployment relationship via interactive bar charts.**
-
-Time spent: **5** hours spent in total
-
-## Required Features
-
-The following **required** functionality is completed:
-
-- [X] **The app includes at least one unique chart developed using the fetched data that tell an interesting story**
-- [X] **Clicking on an item in the list view displays more details about it**
-- [X] **Clicking on an item has a direct, unique link to that item's detail view page**
-
-
-The following **optional** features are implemented:
-
-- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
-- [ ] The site allows users to toggle between different data visualizations
-
-The following **additional** features are implemented:
-
-* [X] Not Found page was implemented with a link to take the user back to Home page.
+*This dynamic web dashboard seamlessly fetches comprehensive geographical data from Ninja's Country API (https://api-ninjas.com/api/country). The application offers robust filtering capabilities and presents users with interactive bar charts (built using Recharts), enabling a nuanced exploration of the population vs. unemployment relationship. Additionally, the dashboard includes a feature where clicking on a country navigates the user to a dedicated page, providing more in-depth statistics for the selected country. This enhances the user experience, offering a unique perspective on geographic data trends.*
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
 <img src='./private/Project-6-Demo.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with LICEcap (https://www.cockos.com/licecap/).
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
-
-## Notes
-
-Learning how to interface recharts to my web app was quite a challenge. Careful examination of rechart's documentations helped with implementing rechart's powerful features to enable users to visualize data. 
 
 ## License
 
