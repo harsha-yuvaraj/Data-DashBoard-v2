@@ -2,7 +2,7 @@
 
 Author: **Harshavardan Yuvaraj**
 
-*This dynamic web dashboard seamlessly fetches comprehensive geographical data from Ninja's Country API. The application offers robust filtering capabilities and presents users with interactive bar charts (built using Recharts), enabling a nuanced exploration of the population vs. unemployment relationship. Additionally, the dashboard includes a feature where clicking on a country navigates the user to a dedicated page, providing more in-depth statistics for the selected country. This enhances the user experience, offering a unique perspective on geographic data trends.*
+This dynamic web dashboard fetches geographical data from Ninja's Country API. This application offers robust filtering capabilities and presents users with interactive bar charts (built using ReactJS Recharts library), enabling the exploration of trends such as population vs. unemployment relationship. Moreover, the dashboard includes a feature where clicking on a country navigates the user to a dedicated page, providing more in-depth statistics for the selected country.
 
 ## Demonstration
 
