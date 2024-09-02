@@ -1,7 +1,5 @@
 # *Geographic Dashboard*
 
-Author: **Harshavardan Yuvaraj**
-
 This dynamic web dashboard fetches geographical data from Ninja's Country API. This application offers key filtering capabilities and presents users with interactive bar charts, enabling the exploration of trends such as population vs. unemployment relationship. Moreover, the dashboard includes a feature where clicking on a country navigates the user to a dedicated page, providing more in-depth statistics for the selected country.
 
 ## Demonstration
